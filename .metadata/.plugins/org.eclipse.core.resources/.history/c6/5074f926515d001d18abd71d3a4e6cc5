@@ -92,11 +92,7 @@ public class GreetingsController {
 	
 	@PutMapping(value = "atualizar") /*mapeia os valores recebidos*/
 	@ResponseBody /*Retorna os dados no corpo da resposta*/
-	public ResponseEntity<?> atualizar(@RequestBody Usuario usuario){/* Recebe os dados para salvar*/
-		
-		if(usuario.getId()== null) {
-			return new ResponseEntity<String>("Não informado o Id do usuário!", HttpStatus.OK);
-		}
+	public ResponseEntity<Usuario> atualizar(@RequestBody Usuario usuario){/* Recebe os dados para salvar*/
 		
 		Usuario user = usuarioRepository.saveAndFlush(usuario);/* passa os dados da variavel usuario que recebido
 		como parâmetro para a variavel user */
