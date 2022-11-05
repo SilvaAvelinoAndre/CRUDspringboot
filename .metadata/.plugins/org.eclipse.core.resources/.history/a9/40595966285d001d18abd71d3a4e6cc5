@@ -1,0 +1,5 @@
+package br.com.springboot.CRUDspringboot.model;
+
+public class Usuario {
+
+}

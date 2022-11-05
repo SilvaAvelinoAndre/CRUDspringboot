@@ -13,14 +13,20 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @RestController
 public class GreetingsController {
-    /**
-     *
-     * @param name the name to greet
-     * @return greeting text
-     */
-    @RequestMapping(value = "/mostrarnome/{name}", method = RequestMethod.GET)
-    @ResponseStatus(HttpStatus.OK)
-    public String greetingText(@PathVariable String name) {
-        return "Curso SpringBoot API" + name + "!";
-    }
+	/**
+	 *
+	 * @param name the name to greet
+	 * @return greeting text
+	 */
+	@RequestMapping(value = "/mostrarnome/{name}", method = RequestMethod.GET)
+	@ResponseStatus(HttpStatus.OK)
+	public String greetingText(@PathVariable String name) {
+		return "Curso SpringBoot API" + name + "!";
+	}
+	@RequestMapping(value = "/olamundo/{nome}", method = RequestMethod.GET)
+	@ResponseStatus(HttpStatus.OK)
+	public String retornaOlaMundo(@PathVariable String nome) {
+		return "Olá Mundo " + nome + "!";
+	}
+
 }
