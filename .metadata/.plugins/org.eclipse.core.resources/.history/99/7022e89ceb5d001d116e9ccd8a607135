@@ -32,7 +32,6 @@
 </form>
 
 <button type="button" class="btn btn-primary" onclick="salvarUsuario()">Salvar</button>
-<button type="button" class="btn btn-secondary" onclick="document.getElementById('formCadastroUser').reset();">Novo</button>
 
 <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
 <!-- Option 1: Bootstrap Bundle with Popper -->
@@ -48,13 +47,12 @@ function salvarUsuario(){
 	$.ajax({
 		method: "POST",
 		url : "salvar",
-		data : JSON.stringify({id : id, nome : nome, idade : idade}),
+		data : "",
 		contentType: "application/json; charset=utf-8",
-		success: function (response) {
-			$("#id").val(response.id);
+		succes: function (response) {
 			alert("Salvo com sucesso!");
 		}
-	}).fail(function (xhr,status, errorThrown){
+	}).fail(function (xr,status, errorThrown){
 		alert("Erro ao salvar: " + xhr.responseText);
 	});
 	
