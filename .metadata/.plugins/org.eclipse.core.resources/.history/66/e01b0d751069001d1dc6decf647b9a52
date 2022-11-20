@@ -187,18 +187,6 @@ function salvarUsuario(){
 	var nome = $("#nome").val();
 	var idade = $("#idade").val();
 	
-	if(nome == null || nome != null && nome.trim() == ""){
-		$('#nome').focus();
-		alert("Informe o nome!");
-		return;
-	}
-	
-	if(idade == null || idade != null && idade.trim() == ""){
-		$('#idade').focus();
-		alert("Informe a idade!");
-		return;
-	}
-	
 	$.ajax({
 		method: "POST",
 		url : "salvar",

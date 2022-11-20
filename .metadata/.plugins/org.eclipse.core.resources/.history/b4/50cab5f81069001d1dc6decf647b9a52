@@ -194,7 +194,6 @@ function salvarUsuario(){
 	}
 	
 	if(idade == null || idade != null && idade.trim() == ""){
-		$('#idade').focus();
 		alert("Informe a idade!");
 		return;
 	}

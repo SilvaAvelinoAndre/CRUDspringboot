@@ -11,8 +11,6 @@
 
 html{
 	margin-left: 3%;
-	margin-right: 3%;
-	margin-top: 3%;
 }
 </style>
 
@@ -63,7 +61,6 @@ html{
            <button type="button" class="btn btn-success" onclick="pesquisaUser()">Buscar</button>
         </form>
         
-        <div style="height: 300px;overflow: scroll;">
         <table class="table" id="tabelaResultados">
   <thead>
     <tr>
@@ -78,7 +75,7 @@ html{
     
   </tbody>
 </table>
-        </div>
+        
         
         
       </div>
@@ -99,10 +96,8 @@ html{
 
 function deletarTela(id){
 	var id = $('#id').val();
-	if(id != null && id.trim() != ""){
 	deleteUser(id);
 	document.getElementById('formCadastroUser').reset();
-	}
 }
 
 function deleteUser(id){
@@ -186,18 +181,6 @@ function salvarUsuario(){
 	var id = $("#id").val();
 	var nome = $("#nome").val();
 	var idade = $("#idade").val();
-	
-	if(nome == null || nome != null && nome.trim() == ""){
-		$('#nome').focus();
-		alert("Informe o nome!");
-		return;
-	}
-	
-	if(idade == null || idade != null && idade.trim() == ""){
-		$('#idade').focus();
-		alert("Informe a idade!");
-		return;
-	}
 	
 	$.ajax({
 		method: "POST",
