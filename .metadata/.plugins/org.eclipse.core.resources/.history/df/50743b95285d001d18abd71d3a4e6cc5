@@ -1,8 +1,0 @@
-package br.com.springboot.CRUDspringboot.model;
-
-import javax.persistence.Entity;
-
-@Entity
-public class Usuario {
-
-}
